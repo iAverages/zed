@@ -363,6 +363,12 @@ impl From<DisplayId> for u32 {
     }
 }
 
+impl From<u32> for DisplayId {
+    fn from(id: u32) -> Self {
+        DisplayId(id)
+    }
+}
+
 impl Debug for DisplayId {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "DisplayId({})", self.0)
